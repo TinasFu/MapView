@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		92CE654A1A08357C0091704C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE65491A08357C0091704C /* AppDelegate.swift */; };
 		92CE654D1A08357C0091704C /* MapViewHW.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92CE654B1A08357C0091704C /* MapViewHW.xcdatamodeld */; };
-		92CE654F1A08357C0091704C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE654E1A08357C0091704C /* ViewController.swift */; };
 		92CE65521A08357C0091704C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CE65501A08357C0091704C /* Main.storyboard */; };
 		92CE65541A08357C0091704C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92CE65531A08357C0091704C /* Images.xcassets */; };
 		92CE65571A08357C0091704C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CE65551A08357C0091704C /* LaunchScreen.xib */; };
 		92CE65631A08357C0091704C /* MapViewHWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE65621A08357C0091704C /* MapViewHWTests.swift */; };
+		92CE656D1A08358D0091704C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE656C1A08358D0091704C /* MapKit.framework */; };
+		92CE656F1A0838870091704C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE656E1A0838870091704C /* MapViewController.swift */; };
+		92CE65711A0848510091704C /* AddRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE65701A0848510091704C /* AddRegionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +33,15 @@
 		92CE65481A08357C0091704C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CE65491A08357C0091704C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92CE654C1A08357C0091704C /* MapViewHW.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapViewHW.xcdatamodel; sourceTree = "<group>"; };
-		92CE654E1A08357C0091704C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		92CE65511A08357C0091704C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92CE65531A08357C0091704C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		92CE65561A08357C0091704C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		92CE655C1A08357C0091704C /* MapViewHWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapViewHWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CE65611A08357C0091704C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CE65621A08357C0091704C /* MapViewHWTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewHWTests.swift; sourceTree = "<group>"; };
+		92CE656C1A08358D0091704C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		92CE656E1A0838870091704C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		92CE65701A0848510091704C /* AddRegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRegionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CE656D1A08358D0091704C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +66,7 @@
 		92CE653B1A08357C0091704C = {
 			isa = PBXGroup;
 			children = (
+				92CE656C1A08358D0091704C /* MapKit.framework */,
 				92CE65461A08357C0091704C /* MapViewHW */,
 				92CE655F1A08357C0091704C /* MapViewHWTests */,
 				92CE65451A08357C0091704C /* Products */,
@@ -80,7 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				92CE65491A08357C0091704C /* AppDelegate.swift */,
-				92CE654E1A08357C0091704C /* ViewController.swift */,
+				92CE656E1A0838870091704C /* MapViewController.swift */,
+				92CE65701A0848510091704C /* AddRegionViewController.swift */,
 				92CE65501A08357C0091704C /* Main.storyboard */,
 				92CE65531A08357C0091704C /* Images.xcassets */,
 				92CE65551A08357C0091704C /* LaunchScreen.xib */,
@@ -164,6 +171,11 @@
 				TargetAttributes = {
 					92CE65431A08357C0091704C = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					92CE655B1A08357C0091704C = {
 						CreatedOnToolsVersion = 6.1;
@@ -215,8 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CE654F1A08357C0091704C /* ViewController.swift in Sources */,
+				92CE65711A0848510091704C /* AddRegionViewController.swift in Sources */,
 				92CE654D1A08357C0091704C /* MapViewHW.xcdatamodeld in Sources */,
+				92CE656F1A0838870091704C /* MapViewController.swift in Sources */,
 				92CE654A1A08357C0091704C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
