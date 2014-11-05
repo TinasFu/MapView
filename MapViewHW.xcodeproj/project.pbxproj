@@ -16,6 +16,8 @@
 		92CE656D1A08358D0091704C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE656C1A08358D0091704C /* MapKit.framework */; };
 		92CE656F1A0838870091704C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE656E1A0838870091704C /* MapViewController.swift */; };
 		92CE65711A0848510091704C /* AddRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE65701A0848510091704C /* AddRegionViewController.swift */; };
+		92CE65731A098E0D0091704C /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE65721A098E0D0091704C /* Region.swift */; };
+		92CE65751A0996A70091704C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE65741A0996A70091704C /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		92CE656C1A08358D0091704C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		92CE656E1A0838870091704C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		92CE65701A0848510091704C /* AddRegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRegionViewController.swift; sourceTree = "<group>"; };
+		92CE65721A098E0D0091704C /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		92CE65741A0996A70091704C /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				92CE65531A08357C0091704C /* Images.xcassets */,
 				92CE65551A08357C0091704C /* LaunchScreen.xib */,
 				92CE654B1A08357C0091704C /* MapViewHW.xcdatamodeld */,
+				92CE65721A098E0D0091704C /* Region.swift */,
+				92CE65741A0996A70091704C /* DataController.swift */,
 				92CE65471A08357C0091704C /* Supporting Files */,
 			);
 			path = MapViewHW;
@@ -228,8 +234,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				92CE65711A0848510091704C /* AddRegionViewController.swift in Sources */,
+				92CE65751A0996A70091704C /* DataController.swift in Sources */,
 				92CE654D1A08357C0091704C /* MapViewHW.xcdatamodeld in Sources */,
 				92CE656F1A0838870091704C /* MapViewController.swift in Sources */,
+				92CE65731A098E0D0091704C /* Region.swift in Sources */,
 				92CE654A1A08357C0091704C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +432,7 @@
 				92CE65681A08357C0091704C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92CE65691A08357C0091704C /* Build configuration list for PBXNativeTarget "MapViewHWTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +441,7 @@
 				92CE656B1A08357C0091704C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

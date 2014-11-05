@@ -8,14 +8,18 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class AddRegionViewController: UIViewController, MKMapViewDelegate {
     
     var locationManager : CLLocationManager!
     var selectedAnnotation : MKAnnotation!
-
+    var dataController : DataController!
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var textView: UITextField!
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,9 @@ class AddRegionViewController: UIViewController, MKMapViewDelegate {
         self.mapView.setCamera(mapCamera, animated: true)
 
         // Do any additional setup after loading the view.
+        // make a reference of AppDelegate and pass the managedObjectContext to DataController
+
+        self.dataController = DataController()
     }
     
     @IBAction func cancel(sender: AnyObject) {
@@ -39,12 +46,15 @@ class AddRegionViewController: UIViewController, MKMapViewDelegate {
     
     
     @IBAction func addRegion(sender: AnyObject) {
-        
         let name = self.textView.text
         var geoRegion = CLCircularRegion(center: selectedAnnotation.coordinate, radius: 100.0, identifier: "\(name)")
         self.locationManager.startMonitoringForRegion(geoRegion)
-        
+        NSNotificationCenter.defaultCenter().postNotificationName("REGION_ADDED", object: self, userInfo: ["region" : geoRegion])
+    
+        //Add to Core Data
+        self.dataController.insertRegionData(geoRegion!)
         self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
 
@@ -53,7 +63,7 @@ class AddRegionViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
 
 
 }
