@@ -24,8 +24,8 @@ class AddRegionViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let regionSet = self.locationManager.monitoredRegions
-        let regions = regionSet.allObjects
+        let regionSet : NSSet = self.locationManager.monitoredRegions
+        let regions : AnyObject = regionSet.allObjects
         println(regions.count)
         
         let mapCamera = MKMapCamera(lookingAtCenterCoordinate: selectedAnnotation.coordinate, fromEyeCoordinate: selectedAnnotation.coordinate, eyeAltitude: 8000)

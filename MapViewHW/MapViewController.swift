@@ -12,7 +12,8 @@ import CoreData
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    let locationManager = CLLocationManager()
+    var locationManager : CLLocationManager!
+    
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -23,6 +24,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "regionAdded:", name: "REGION_ADDED", object: nil)
         let longPress = UILongPressGestureRecognizer(target: self, action: "didLongPressMap:")
         self.mapView.addGestureRecognizer(longPress)
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        self.locationManager = appDelegate.locationManager
+        
         self.locationManager.delegate = self
         self.mapView.delegate = self
         switch CLLocationManager.authorizationStatus() as CLAuthorizationStatus {

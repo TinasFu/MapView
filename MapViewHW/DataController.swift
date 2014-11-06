@@ -14,9 +14,7 @@ class DataController {
     var managedObjectContext : NSManagedObjectContext!
     
     init() {
-        
         var appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-
         self.managedObjectContext = appDelegate.managedObjectContext
     }
     
@@ -29,6 +27,12 @@ class DataController {
         newRegion.latitude = region.center.latitude
         newRegion.date = time
         
+        var error : NSError?
+        self.managedObjectContext.save(&error)
+        
+        if error != nil {
+            println(error?.localizedDescription)
+        }
     }
 
     
