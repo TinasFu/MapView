@@ -26,9 +26,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.mapView.addGestureRecognizer(longPress)
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.locationManager = appDelegate.locationManager
-        
         self.locationManager.delegate = self
         self.mapView.delegate = self
+        
+
+
+                
         switch CLLocationManager.authorizationStatus() as CLAuthorizationStatus {
         case .Authorized:
             println("authorized")

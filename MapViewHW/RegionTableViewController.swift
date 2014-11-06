@@ -24,20 +24,18 @@ class RegionTableViewController: UIViewController, UITableViewDataSource, NSFetc
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.locationManager = appDelegate.locationManager
         self.locationManager.delegate = self
-//        let regionSet = self.locationManager.monitoredRegions
-//        let regions = regionSet.allObjects
-//        
-//        if regions.count == 0 {
-//            var fetchRequest = NSFetchRequest(entityName: "Region")
-//            self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: "Regions")
-//            for anyObject in self.fetchedResultsController.fetchedObjects! {
-//                NSFileManager.delete(anyObject)
-//            }
-//            
-//        }
-        
         self.managedObjectContext = appDelegate.managedObjectContext
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didGetCloudChanges:", name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object: appDelegate.persistentStoreCoordinator)
+        
+        if self.locationManager.monitoredRegions.count == 0 {
+            var fetchRequest = NSFetchRequest(entityName: "Region")
+            self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: "Regions")
+            for anyObject in self.fetchedResultsController.fetchedObjects! {
+                NSFileManager.delete(anyObject)
+            }
+            
+        }
+
         
         var fetchRequest = NSFetchRequest(entityName: "Region")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -79,6 +77,7 @@ class RegionTableViewController: UIViewController, UITableViewDataSource, NSFetc
             
             
             //remove region from monitoredRegions through location manager
+            
             println("number of monitored regions before removing:\(self.locationManager.monitoredRegions.allObjects.count)")
             let geoRegion = self.fetchedResultsController.objectAtIndexPath(indexPath) as Region
             for region in self.locationManager.monitoredRegions {
